@@ -2,21 +2,21 @@
 
 <img src="http://animejs.com/documentation/assets/img/readme/animejs-logo.gif" width="100%" />
 
->*Anime* `(/ˈæn.ə.meɪ/)` is a lightweight JavaScript animation library. It works with any CSS Properties, individual CSS transforms, SVG or any DOM attributes, and JavaScript Objects.
+>*Anime* `(/ˈæn.ə.meɪ/)` 是一个轻量级的JS动画库. 可以作用于所有 CSS 属性, 独立的 CSS 变换, SVG 和任意 DOM 属性, 以及 JavaScript 对象.
 
-⚠️ **Migrating from v1.x ? Make sure to read the [changelog](https://github.com/juliangarnier/anime/releases/tag/v2.0.0)** ⚠️
+⚠️ **从 v1.x如何迁移 ? 请移步 [changelog](https://github.com/juliangarnier/anime/releases/tag/v2.0.0)** ⚠️
 
-### Main features
+### 主要功能
 
 * [Keyframes](#keyframes): Chain multiple animation properties.
-* [Timeline](#timeline): Synchronize multiple instances together.
-* [Playback controls](#playback-controls): Play, pause, restart, seek animations or timelines.
+* [Timeline](#timeline): 一起同步多个实例.
+* [Playback controls](#playback-controls): 开, 暂停, 重开, seek（回溯） 等动画或者时间轴.
 * [CSS transforms](#individual-CSS-transforms): Animate CSS transforms individually.
 * [Function based values](#function-based-values): Multiple animated targets can have individual value.
 * [SVG Animations](#svg): Motion path, line drawing and morphing animations.
 * [Easing functions](#easing-functions): Use the built in functions or create your own Cubic Bézier curve easing.
 
-### Demos and examples
+### Demos 和 例子
 
 * [CodePen demos and examples](http://codepen.io/collection/b392d3a52d6abf5b8d9fda4e4cab61ab/)
 * [juliangarnier.com](http://juliangarnier.com)
