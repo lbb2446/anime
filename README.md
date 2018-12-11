@@ -230,8 +230,8 @@ anime({
 
 <img src="http://animejs.com/documentation/assets/img/readme/fb-parameters.gif" width="332" />
 
-Get different property parameters for every target of the animation.<br>
-The function accepts 3 arguments: `target`, `index`, `targetsLength`.
+对每一个动画的目标可以得到不同的属性参数.<br>
+ function 默认返回3个参数: `target`, `index`, `targetsLength`.
 
 ```javascript
 anime({
@@ -255,7 +255,7 @@ anime({
 
 ➜ [Function based parameters examples](http://animejs.com/documentation/#functionBasedDuration)
 
-## Animation parameters
+## 动画参数
 
 <img src="http://animejs.com/documentation/assets/img/readme/anim-parameters.gif" width="332" />
 
@@ -264,7 +264,7 @@ Parameters relative to the animation to specify the direction, the number of loo
 | Names | Defaults | Types
 | --- | --- | ---
 | loop | `false` | `number`, `boolean`
-| direction | `'normal'` | `'normal'`, `'reverse'`, `'alternate'`
+| direction | `'normal'` | `'normal'`（正常）, `'reverse'`（颠倒）, `'alternate'`（交替）
 | autoplay | `true` | `boolean`
 
 ```javascript
@@ -280,19 +280,19 @@ anime({
 
 ➜ [Animation parameters examples](http://animejs.com/documentation/#alternate)
 
-## Property values
+## 属性值
 
-### Single value
+### 单个值
 
-Defines the end value of the animation.<br>
+定义 动画的最终值<br>
 Start value is the original target value, or default transforms value.
 
 | Types | Examples | Infos
 | --- | --- | ---
 | Number | `100` | Automatically add original or default unit if needed
 | String | `'10em'`, `'1turn'`, `'M21 1v160'`, `'50%'` | Must contains at least one numerical value
-| Relative values | `'+=100px'`, `'-=20em'`, `'*=4'` | Add, subtract or multiply the original property value
-| Colors | `'#FFF'`, `'rgb(255,0,0)'`, `'hsl(100, 20%, 80%)'` | Accepts 3 or 6 hex digit, rgb, or hsl values
+| Relative values | `'+=100px'`, `'-=20em'`, `'*=4'` | 加、减、乘原属性值
+| Colors | `'#FFF'`, `'rgb(255,0,0)'`, `'hsl(100, 20%, 80%)'` | 接受 3 or 6位十六进制, rgb, 或者 hsl 值
 
 ➜ [Values examples](http://animejs.com/documentation/#unitlessValue)
 
@@ -311,7 +311,7 @@ anime({
 
 <img src="http://animejs.com/documentation/assets/img/readme/value-from-to.gif" width="332" />
 
-Force the animation to start at a certain value.
+使用动画开始于某一个值
 
 ```javascript
 anime({
@@ -330,9 +330,9 @@ anime({
 
 <img src="http://animejs.com/documentation/assets/img/readme/value-fb.gif" width="332" />
 
-Same as [function based property parameters](#function-based-property-parameters).<br>
-Get different values for every target and property of the animation.<br>
-The function accepts 3 arguments: `target`, `index`, `targetsLength`.
+ 与 [function based property parameters](#function-based-property-parameters)一样.<br>
+对每一个动画的目标可以得到不同的属性参数.<br>
+ function 默认返回3个参数: `target`, `index`, `targetsLength`.
 
 ```javascript
 anime({
@@ -358,7 +358,7 @@ anime({
 
 <img src="http://animejs.com/documentation/assets/img/readme/value-keyframes.gif" width="332" />
 
-Keyframes are defined using an `Array` of property Object.<br>
+Keyframes(关键帧) 使用 对象数组定义.<br>
 Instance's `duration` is divided by the number of keyframes of each properties if not specified.
 
 ```javascript
@@ -391,19 +391,19 @@ anime({
 
 ➜ [Specific keyframes properties example](http://animejs.com/documentation/#keyframes)
 
-## Timeline
+## Timeline(时间轴)
 
 ### Basic timeline
 
 <img src="http://animejs.com/documentation/assets/img/readme/timeline.gif" width="332" />
 
-Play animations in sequence by creating a timeline:
+通过创建一个时间轴来播放动画序列:
 
 ```javascript
 var myTimeline = anime.timeline();
 ```
 
-A timeline accepts the same parameters as an animation: `direction`, `loop` and `autoplay`.
+时间轴可以接受与动画对象一样的参数: `direction`, `loop` and `autoplay`.
 
 ```javascript
 var myTimeline = anime.timeline({
@@ -413,7 +413,7 @@ var myTimeline = anime.timeline({
 });
 ```
 
-Add animations to the timeline with `.add()` :
+在时间轴上新增一个动作 `.add()` :
 
 ```javascript
 myTimeline
@@ -431,15 +431,15 @@ myTimeline
   });
 ```
 
-Access timeline children animations with `myTimeline.children`
+可以通过`myTimeline.children`获取子对象
 
 ➜ [Basic timeline example](http://animejs.com/documentation/#basicTimeline)
 
-### Timeline animations offsets
+### Timeline animations offsets（时间轴动画补间？）
 
-`offset` defines the starting time of an animation on the timeline.
+`offset` 在时间轴中定义开始时间
 
-#### Relative offset
+#### Relative offset（相对时间）
 
 <img src="http://animejs.com/documentation/assets/img/readme/timeline-relative.gif" width="332" />
 
@@ -447,8 +447,8 @@ Defines starting time relative to the previous animations duration.
 
 | Types | Examples | Infos
 | --- | --- | ---
-| `+=` | `'+=100'` | Starts 100ms after the previous animation ends
-| `-=` | `'-=100'` | Starts 100ms before the previous animation ends
+| `+=` | `'+=100'` | Starts 100ms after the previous animation ends（后延）
+| `-=` | `'-=100'` | Starts 100ms before the previous animation ends（前推）
 | `*=` | `'*=2'` | Starts at 2 times the previous animations duration
 
 ```javascript
@@ -471,11 +471,11 @@ myTimeline
 
 ➜ [Relative offset example](http://animejs.com/documentation/#relativeOffset)
 
-#### Absolute offset
+#### Absolute offset（绝对时间）
 
 <img src="http://animejs.com/documentation/assets/img/readme/timeline-absolute.gif" width="332" />
 
-Defines an absolute starting time on the timeline with a number.
+定义了一个绝对的起始时间与数量在时间轴上
 
 ```javascript
 myTimeline
@@ -498,7 +498,7 @@ myTimeline
 
 ➜ [Absolute offset example](http://animejs.com/documentation/absoluteOffset)
 
-## Playback controls
+## 回放控制
 
 Play, pause, restart, seek animations or timelines.
 
@@ -556,11 +556,11 @@ reverseAnim.reverse(); // Change the animation direction
 
 ➜ [Reverse example](http://animejs.com/documentation/#reverseAnim)
 
-### Seek
+### Seek（回溯）
 
 <img src="http://animejs.com/documentation/assets/img/readme/playback-seek.gif" width="332" />
 
-Change animations or timelines current time.
+回溯到选定的时间点
 
 ```javascript
 var seekAnim = anime({
@@ -580,7 +580,7 @@ seekAnim.seek(500); // Set the animation current time to 500ms
 
 <img src="http://animejs.com/documentation/assets/img/readme/callbacks-all.gif" width="332" />
 
-Execute a function at the beginning, during or when an animation or timeline is completed.
+执行一个函数在开始,更新或完成的时候
 
 | Names | Types | Arguments | Info
 | --- | --- | --- | ---
@@ -592,7 +592,7 @@ Execute a function at the beginning, during or when an animation or timeline is 
 
 ### Update
 
-`update()` is called on every frame while the instance is playing.
+`update()` 在播放的时候,每一帧都会触发.
 
 ```javascript
 var myAnimation = anime({
@@ -610,7 +610,7 @@ var myAnimation = anime({
 
 ### Begin
 
-`begin()` is called once after the delay is finished.
+`begin()` 会毁掉一次，在delay结束的时候
 
 ```javascript
 var myAnimation = anime({
@@ -629,7 +629,7 @@ Check if the animation has begun with `myAnimation.began`, return `true` or `fal
 
 ### Run
 
-`run()` is called every frame after the delay is finished.
+`run()` 在delay结束的时候后的每一帧.
 
 ```javascript
 var myAnimation = anime({
@@ -646,7 +646,7 @@ var myAnimation = anime({
 
 ### Complete
 
-`complete()` is called once after the animation is finished.
+`complete()` 动画结束的时候调用.
 
 ```javascript
 var myAnimation = anime({
@@ -664,7 +664,7 @@ Check if the animation has finished with `myAnimation.completed`, return `true` 
 
 ## Promises
 
-`myAnimation.finished` returns a Promise object which will resolve once the animation has finished running.
+`myAnimation.finished` 一旦动画运行结束返回一个Promise对象 ？？returns a Promise object which will resolve once the animation has finished running.
 
 ➜ [Promises example](http://animejs.com/documentation/#finishedPromise)
 
@@ -674,7 +674,7 @@ Check if the animation has finished with `myAnimation.completed`, return `true` 
 
 <img src="http://animejs.com/documentation/assets/img/readme/svg-motion-path.gif" width="332" />
 
-Translate and rotate DOM elements along an SVG path:
+使 DOM elements沿着SVGpath运动和翻转:
 
 ```javascript
 // Create a path `Object`
@@ -690,11 +690,11 @@ var motionPath = anime({
 
 ➜ [Motion path example](http://animejs.com/documentation/#motionPath)
 
-### Morphing
+### Morphing（变形）
 
 <img src="http://animejs.com/documentation/assets/img/readme/svg-morphing.gif" width="332" />
 
-Animate the transition between two SVG shapes:
+使动画在两个SVG图形之间的过渡:
 
 ```html
 <svg class="shape" width="128" height="128" viewBox="0 0 128 128">
@@ -709,15 +709,15 @@ var svgAttributes = anime({
 });
 ```
 
-Shapes need to have the same number of points.
+形状需要相同数量的点.
 
 ➜ [Morphing example](http://animejs.com/documentation/#morphing)
 
-### Line drawing
+### Line drawing(绘线)
 
 <img src="http://animejs.com/documentation/assets/img/readme/svg-line-drawing.gif" width="332" />
 
-Line drawing animation of an SVG shape:
+照着一个SVG的形状的线条绘制动画:
 
 ```javascript
 anime({
@@ -728,18 +728,18 @@ anime({
 
 ➜ [Line drawing example](http://animejs.com/documentation/#lineDrawing)
 
-## Easing functions
+## Easing functions（缓动函数）
 
 The `easing` parameter can accept either a string or a custom Bézier curve coordinates (array).
 
 | Types | Examples | Infos
 | --- | --- | ---
-| String | `'easeOutExpo'` | Built in function names
-| `Array` | [.91,-0.54,.29,1.56] | Custom Bézier curve coordinates ([x1, y1, x2, y2])
+| String | `'easeOutExpo'` | 已有的函数名称
+| `Array` | [.91,-0.54,.29,1.56] | 定义贝塞尔曲线坐标轴 ([x1, y1, x2, y2])
 
 ### Built in functions
 
-Linear easing: `'linear'`
+Linear easing: `'linear'`（线性，平滑）
 
 Penner's equations:
 
@@ -754,7 +754,43 @@ Penner's equations:
 | easeInCirc | easeOutCirc | easeInOutCirc
 | easeInBack | easeOutBack | easeInOutBack
 | easeInElastic | easeOutElastic | easeInOutElastic
-
+```
+这部分的贝塞尔曲线参数是我从他的源码中拿过来的和上面的table一一对应
+在谷歌控制台中 使用如下样式再点击图例可以看到具体图形运动轨迹: transition: all 1s cubic-bezier(0.46, 0.03, 0.52, 0.96)
+ In: [
+      [0.550, 0.085, 0.680, 0.530], /* inQuad */
+      [0.550, 0.055, 0.675, 0.190], /* inCubic */
+      [0.895, 0.030, 0.685, 0.220], /* inQuart */
+      [0.755, 0.050, 0.855, 0.060], /* inQuint */
+      [0.470, 0.000, 0.745, 0.715], /* inSine */
+      [0.950, 0.050, 0.795, 0.035], /* inExpo */
+      [0.600, 0.040, 0.980, 0.335], /* inCirc */
+      [0.600,-0.280, 0.735, 0.045], /* inBack */
+      elastic /* inElastic */
+    ],
+    Out: [
+      [0.250, 0.460, 0.450, 0.940], /* outQuad */
+      [0.215, 0.610, 0.355, 1.000], /* outCubic */
+      [0.165, 0.840, 0.440, 1.000], /* outQuart */
+      [0.230, 1.000, 0.320, 1.000], /* outQuint */
+      [0.390, 0.575, 0.565, 1.000], /* outSine */
+      [0.190, 1.000, 0.220, 1.000], /* outExpo */
+      [0.075, 0.820, 0.165, 1.000], /* outCirc */
+      [0.175, 0.885, 0.320, 1.275], /* outBack */
+      (a, p) => t => 1 - elastic(a, p)(1 - t) /* outElastic */
+    ],
+    InOut: [
+      [0.455, 0.030, 0.515, 0.955], /* inOutQuad */
+      [0.645, 0.045, 0.355, 1.000], /* inOutCubic */
+      [0.770, 0.000, 0.175, 1.000], /* inOutQuart */
+      [0.860, 0.000, 0.070, 1.000], /* inOutQuint */
+      [0.445, 0.050, 0.550, 0.950], /* inOutSine */
+      [1.000, 0.000, 0.000, 1.000], /* inOutExpo */
+      [0.785, 0.135, 0.150, 0.860], /* inOutCirc */
+      [0.680,-0.550, 0.265, 1.550], /* inOutBack */
+      (a, p) => t => t < .5 ? elastic(a, p)(t * 2) / 2 : 1 - elastic(a, p)(t * -2 + 2) / 2 /* inOutElastic */
+    ]
+```
 ➜ [Built in easing functions examples](http://animejs.com/documentation/#penner)
 
 Usage:
@@ -798,7 +834,7 @@ Custom Bézier curves coordinates can be generated here <https://matthewlein.com
 
 ### Defining custom functions
 
-Expand the built in easing functions from `anime.easings`.
+扩大已经有的动画函数在`anime.easings`里.
 
 ```javascript
 // Add custom function
