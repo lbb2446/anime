@@ -755,6 +755,7 @@ Penner's equations:
 | easeInBack | easeOutBack | easeInOutBack
 | easeInElastic | easeOutElastic | easeInOutElastic
 ```
+！！https://codepen.io/juliangarnier/pen/mWdraw 这个地址可以直接调试
 这部分的贝塞尔曲线参数是我从他的源码中拿过来的和上面的table一一对应
 在谷歌控制台中 使用如下样式再点击图例可以看到具体图形运动轨迹: transition: all 1s cubic-bezier(0.46, 0.03, 0.52, 0.96)
  In: [
