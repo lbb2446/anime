@@ -11,7 +11,7 @@
 * [Keyframes](#keyframes): Chain multiple animation properties.
 * [Timeline](#timeline): 一起同步多个实例.
 * [Playback controls](#playback-controls): 开, 暂停, 重开, seek（回溯） 等动画或者时间轴.
-* [CSS transforms](#individual-CSS-transforms): 单独CSS动画转换
+* [CSS transforms](#individual-CSS-transforms):独特的CSStransforms类型的动画属性
 * [Function based values](#function-based-values): Multiple animated targets can have individual value.
 * [SVG Animations](#svg): 运动轨迹, 绕线运动 和 变形动画.
 * [Easing functions](#easing-functions): 使用已构建好的动画曲线或者 创建你自己的贝塞尔曲线.
@@ -68,17 +68,17 @@ anime({
 
 ## Targets（目标）
 
-The `targets` property defines the elements or JS `Object`s to animate.
+ `targets` 属性定义elements或者JS对象发生动画.
 
 | Types | Examples
 | --- | ---
-| CSS Selectors | `'div'`, `'.item'`, `'path'`, `'#el path'` ...
-| DOM Element | `document.querySelector('.item')`
-| NodeList | `document.querySelectorAll('.item')`
-| `Object` | `{prop1: 100, prop2: 200}`
-| `Array` | `['div', '.item', domNode]`
+| CSS Selectors(css选择器) | `'div'`, `'.item'`, `'path'`, `'#el path'` ...
+| DOM Element(dom对象) | `document.querySelector('.item')`
+| NodeList (dom对象集合)| `document.querySelectorAll('.item')`
+| `Object` (js对象)| `{prop1: 100, prop2: 200}`
+| `Array` (数组)| `['div', '.item', domNode]`
 
-➜ [Targets examples](http://animejs.com/documentation/#cssSelector)
+➜ [Targets 案例](http://animejs.com/documentation/#cssSelector)
 
 ## Animatable properties
 
@@ -86,9 +86,9 @@ The `targets` property defines the elements or JS `Object`s to animate.
 | --- | ---
 | CSS | `opacity`, `backgroundColor`, `fontSize` ...
 | Transforms | `translateX`, `rotate`, `scale` ...
-| Object properties | Any `Object` property containing numerical values
-| DOM attributes | Any DOM attributes containing numerical values
-| SVG attributes | Any SVG attributes containing numerical values
+| Object properties |  `Object`中所有包含数值类型的属性
+| DOM attributes | 所有 DOM 包含 数值 属性 
+| SVG attributes |所有 SVG 包含 数值 属性 
 
 ➜ [Animatable properties examples](http://animejs.com/documentation/#cssProperties)
 
@@ -96,7 +96,7 @@ The `targets` property defines the elements or JS `Object`s to animate.
 
 <img src="http://animejs.com/documentation/assets/img/readme/prop-css.gif" width="332" />
 
-Any CSS properties can be animated:
+所有CSS属性都能被做动画:
 
 ```javascript
 anime({
@@ -109,11 +109,11 @@ anime({
 
 ➜ [CSS properties example](http://animejs.com/documentation/#cssProperties)
 
-### Individual CSS transforms
+### 独特的 CSS 转换
 
 <img src="http://animejs.com/documentation/assets/img/readme/prop-transforms.gif" width="332" />
 
-CSS transforms can be animated individually:
+CSS 中的transforms类被单独提取出来:
 
 ```javascript
 anime({
@@ -126,11 +126,11 @@ anime({
 
 ➜ [CSS Transforms example](http://animejs.com/documentation/#CSStransforms)
 
-### JavaScript Object properties
+### JavaScript Object 属性
 
 <img src="http://animejs.com/documentation/assets/img/readme/prop-js-obj.gif" width="332" />
 
-Any `Object` property containing a numerical value can be animated:
+所有 `Object`  包含数值的属性都可以做动画:
 
 ```javascript
 var myObject = {
@@ -147,11 +147,11 @@ anime({
 
 ➜ [Object properties example](http://animejs.com/documentation/#JSobjectProp)
 
-### DOM Attributes
+### DOM 属性
 
 <img src="http://animejs.com/documentation/assets/img/readme/prop-dom-attr.gif" width="332" />
 
-Any DOM Attribute containing a numerical values can be animated:
+所有 `Dom属性`  包含数值的属性都可以做动画:
 
 ```html
 <input value="0">
@@ -171,7 +171,7 @@ anime({
 
 <img src="http://animejs.com/documentation/assets/img/readme/prop-svg-attr.gif" width="332" />
 
-Any SVG Attribute containing a numerical values can be animated:
+所有 `SVG属性`  包含数值的属性都可以做动画:
 
 ```html
 <svg width="128" height="128" viewBox="0 0 128 128">
@@ -188,19 +188,19 @@ anime({
 
 ➜ [SVG Attributes example](http://animejs.com/documentation/#svgAttributes)
 
-## Property parameters
+## 属性参数
 
 <img src="http://animejs.com/documentation/assets/img/readme/prop-parameters.gif" width="332" />
 
-Defines duration, delay and easing for each property animations.<br>
-Can be set globally, or individually to each properties:
+定义了 duration, delay and easing 针对所有的动画属性.<br>
+可以对这些属性做单独或者全部的操作:
 
 | Names | Defaults | Types | Info
 | --- | --- | --- | ---
-| duration | `1000` | `number`, `function`  | millisecond
-| delay | `0` | `number`, `function`   | millisecond
-| easing | `'easeOutElastic'` | `function`  | [See Easing functions](#easing-functions)
-| elasticity | `500` | `number`, `function` | Range [0 - 1000]
+| duration | `1000` | `number`, `function`  | 毫秒
+| delay | `0` | `number`, `function`   | 毫秒
+| easing | `'easeOutElastic'` | `function`  | [缓动函数类型](#easing-functions)
+| elasticity | `500` | `number`, `function` | 范围 [0 - 1000]
 | round | `false` | `number`, `boolean`, `function` | Power of 10
 
 ```javascript
