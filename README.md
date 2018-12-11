@@ -11,12 +11,12 @@
 * [Keyframes](#keyframes): Chain multiple animation properties.
 * [Timeline](#timeline): 一起同步多个实例.
 * [Playback controls](#playback-controls): 开, 暂停, 重开, seek（回溯） 等动画或者时间轴.
-* [CSS transforms](#individual-CSS-transforms): Animate CSS transforms individually.
+* [CSS transforms](#individual-CSS-transforms): 单独CSS动画转换
 * [Function based values](#function-based-values): Multiple animated targets can have individual value.
-* [SVG Animations](#svg): Motion path, line drawing and morphing animations.
-* [Easing functions](#easing-functions): Use the built in functions or create your own Cubic Bézier curve easing.
+* [SVG Animations](#svg): 运动轨迹, 绕线运动 和 变形动画.
+* [Easing functions](#easing-functions): 使用已构建好的动画曲线或者 创建你自己的贝塞尔曲线.
 
-### Demos 和 例子
+### Demo 和 例子
 
 * [CodePen demos and examples](http://codepen.io/collection/b392d3a52d6abf5b8d9fda4e4cab61ab/)
 * [juliangarnier.com](http://juliangarnier.com)
@@ -24,7 +24,7 @@
 * [kenzo.com/en/thejunglebook](https://kenzo.com/en/thejunglebook)
 * [Stress test](http://codepen.io/juliangarnier/pen/9aea7f045d7db301eab41bc09dcfc04d?editors=0010)
 
-### Browser support
+### 浏览器支持情况
 
 | Chrome | Safari | IE / Edge | Firefox | Opera |
 | --- | --- | --- | --- | --- |
@@ -42,13 +42,13 @@ $ bower install animejs
 import anime from 'animejs'
 ```
 
-Or manually [download](https://github.com/juliangarnier/anime/archive/master.zip) and link `anime.min.js` in your HTML:
+  [手动下载](https://github.com/juliangarnier/anime/archive/master.zip) and link `anime.min.js` in your HTML:
 
 ```html
 <script src="anime.min.js"></script>
 ```
 
-Then start animating:
+然后开始开发:
 
 ```javascript
 anime({
@@ -66,7 +66,7 @@ anime({
 
 # API
 
-## Targets
+## Targets（目标）
 
 The `targets` property defines the elements or JS `Object`s to animate.
 
